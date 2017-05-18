@@ -1,5 +1,10 @@
 <?php 
-include 'layouts/header.php';
+session_start();
+if (!isset($_SESSION['user'])) {
+	header('location: login.php');
+}
+require '../conf/db.php';
+require 'layouts/header.php';
 
 if (isset($_GET['page'])) {
 	$page = htmlspecialchars($_GET['page']);
@@ -7,7 +12,7 @@ if (isset($_GET['page'])) {
 		header('location: index.php');
 	}
 
-	include 'page/'.$page.'.php';
+	require 'page/'.$page.'.php';
 }
 
-include 'layouts/footer.php';
+require 'layouts/footer.php';
