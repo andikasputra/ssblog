@@ -47,19 +47,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4" style="background-color: #fff; margin-top: 100px; padding-bottom: 40px">
-				<form class="form">
+				<form class="form" action="register-action.php" method="POST">
 					<h2>Register</h2>
 					<div class="form-group">
 						<label for="username">Username</label>
-						<input type="text" id="username" class="form-control" placeholder="Username">
+						<input type="text" id="username" class="form-control" placeholder="Username" name="username">
 					</div>
 					<div class="form-group">
 						<label for="fullname">Full Name</label>
-						<input type="text" id="fullname" class="form-control" placeholder="Fullname">
+						<input type="text" id="fullname" class="form-control" placeholder="Fullname" name="fullname">
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label>
-						<input type="text" id="password" class="form-control" placeholder="Password">
+						<input type="password" id="password" class="form-control" placeholder="Password" name="password">
 					</div>
 					<div class="form-group">
 						<p>Already register? <a href="login.php">Login here</a></p>
