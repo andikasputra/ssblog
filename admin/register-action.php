@@ -10,6 +10,6 @@ if (isset($_POST)) {
 	$query = "INSERT INTO user (username, fullname, password) VALUES ('$username', '$fullname', '$password')";
 	$sql = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 	if ($sql) {
-		header('location: index.php');
+		header('location: login.php');
 	}
 }

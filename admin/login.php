@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+	<title>Login</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 	<meta name="viewport" content="width=device-width" />
@@ -47,15 +47,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4" style="background-color: #fff; margin-top: 100px; padding-bottom: 40px">
-				<form class="form">
+				<form class="form" action="login-action.php" method="POST">
 					<h2>Login</h2>
 					<div class="form-group">
 						<label for="username">Username</label>
-						<input type="text" id="username" class="form-control" placeholder="Username">
+						<input type="text" id="username" class="form-control" placeholder="Username" name="username">
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label>
-						<input type="text" id="password" class="form-control" placeholder="Password">
+						<input type="password" id="password" class="form-control" placeholder="Password" name="password">
 					</div>
 					<div class="form-group">
 						<p>Haven't register yet? <a href="register.php">Register here</a></p>
