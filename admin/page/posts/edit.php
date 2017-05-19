@@ -47,7 +47,8 @@ $post = mysqli_fetch_assoc($sql);
 									<div class="form-group">
 										<label for="picture">Picture</label>
 										<img src="../assets/upload/images/<?= $post['picture'] ?>" width="200px">
-										<input type="file" id="picture" name="picture" class="form-control" required="required">
+										<input type="hidden" name="old_picture" value="<?= $post['picture'] ?>">
+										<input type="file" id="picture" name="picture" class="form-control">
 									</div>
 									<div class="form-group">
 										<button class="btn btn-success" type="submit">Save</button>
@@ -62,10 +63,10 @@ $post = mysqli_fetch_assoc($sql);
 			<script>
 				CKEDITOR.replace(document.getElementById('content'), {
 					filebrowserBrowseUrl : '../plugins/kcfinder/browse.php?type=files',
-  filebrowserImageBrowseUrl : '../plugins/kcfinder/browse.php?type=images',
-  filebrowserFlashBrowseUrl : '../plugins/kcfinder/browse.php?type=flash',
-  filebrowserUploadUrl : '../plugins/kcfinder/upload.php?type=files',
-  filebrowserImageUploadUrl : '../plugins/kcfinder/upload.php?type=images',
-  filebrowserFlashUploadUrl : '../plugins/kcfinder/upload.php?type=flash'
+				  filebrowserImageBrowseUrl : '../plugins/kcfinder/browse.php?type=images',
+				  filebrowserFlashBrowseUrl : '../plugins/kcfinder/browse.php?type=flash',
+				  filebrowserUploadUrl : '../plugins/kcfinder/upload.php?type=files',
+				  filebrowserImageUploadUrl : '../plugins/kcfinder/upload.php?type=images',
+				  filebrowserFlashUploadUrl : '../plugins/kcfinder/upload.php?type=flash'
 				})
 			</script>
