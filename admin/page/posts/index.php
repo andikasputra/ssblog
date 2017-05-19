@@ -19,28 +19,24 @@
 								<th>Action</th>
 							</thead>
 							<tbody>
+								<?php 
+								$query = "SELECT posts.*, categories.name, user.fullname FROM posts JOIN categories ON posts.category_id = categories.id JOIN user ON posts.user_id = user.id ORDER BY posts.id DESC";
+								$sql = mysqli_query($koneksi, $query) or die (mysqli_error() . $query);
+								$no = 1;
+								while ($post = mysqli_fetch_assoc($sql)) { ?>
 								<tr>
-									<td>1</td>
-									<td>Ini Judul Tulisan</td>
-									<td>Pendidikan</td>
-									<td>Admin</td>
-									<td>20 Mei 2017</td>
+									<td><?= $no++ ?></td>
+									<td><?= $post['title'] ?></td>
+									<td><?= $post['name'] ?></td>
+									<td><?= $post['fullname'] ?></td>
+									<td><?= date('d F Y', $post['date']) ?></td>
 									<td>
-											<a href='' class='btn btn-warning btn-sm'>Edit</a>
-											<a href='' class='btn btn-default btn-sm'>Hapus</a>
+											<a href='?page=posts/edit&id=<?= $post['id'] ?>' class='btn btn-warning btn-sm'>Edit</a>
+											<a href='?page=posts/delete&id=<?= $post['id'] ?>' class='btn btn-default btn-sm'>Hapus</a>
 									  </td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td>Hari Pendidikan Nasional</td>
-									<td>Pendidikan</td>
-									<td>Admin</td>
-									<td>2 Mei 2017</td>
-									<td>
-											<a href='' class='btn btn-warning btn-sm'>Edit</a>
-											<a href='' class='btn btn-default btn-sm'>Hapus</a>
-									  </td>
-								</tr>
+								<?php 
+								} ?>
 							</tbody>
 						</table>
 
