@@ -7,10 +7,10 @@
 								<p class="category">Add post category</p>
 							</div>
 							<div class="content table-responsive table-full-width">
-								<form action="" method="post" class="form">
+								<form action="?page=categories/add_action" method="post" class="form">
 									<div class="form-group">
 										<label for="name">Name</label>
-										<input type="text" id="name" class="form-control" required="required">
+										<input type="text" name="name" id="name" class="form-control" required="required">
 									</div>
 									<div class="form-group">
 										<button class="btn btn-success" type="submit">Save</button>
