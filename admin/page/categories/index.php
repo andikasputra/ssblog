@@ -13,17 +13,19 @@
 							<thead>
 								<th>No</th>
 							  <th>Name</th>
+							  <th>Number of Posts</th>
 							  <th>Action</th>
 							</thead>
 							<tbody>
 							<?php 
-							$query = "SELECT * FROM categories ORDER BY name";
+							$query = "SELECT categories.*, COUNT(posts.title) AS jml_post FROM categories LEFT JOIN posts ON posts.category_id = categories.id GROUP BY categories.id ORDER BY categories.name";
 							$sql = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 							$no = 1;
 							while ($kategori = mysqli_fetch_assoc($sql)){ ?>
 								<tr>
 									<td><?= $no++ ?></td>
 									<td><?= $kategori['name'] ?></td>
+									<td><?= $kategori['jml_post'] ?></td>
 									<td>
 										<a href='?page=categories/edit&id=<?= $kategori['id'] ?>' class='btn btn-warning btn-sm'>Edit</a>
 										<a href='?page=categories/delete&id=<?= $kategori['id'] ?>' class='btn btn-default btn-sm'>Hapus</a>
