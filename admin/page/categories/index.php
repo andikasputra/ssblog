@@ -16,30 +16,21 @@
 							  <th>Action</th>
 							</thead>
 							<tbody>
+							<?php 
+							$query = "SELECT * FROM categories ORDER BY name";
+							$sql = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
+							$no = 1;
+							while ($kategori = mysqli_fetch_assoc($sql)){ ?>
 								<tr>
-									<td>1</td>
-									<td>Teknologi</td>
+									<td><?= $no++ ?></td>
+									<td><?= $kategori['name'] ?></td>
 									<td>
-										<a href='' class='btn btn-warning btn-sm'>Edit</a>
-										<a href='' class='btn btn-default btn-sm'>Hapus</a>
+										<a href='?page=categories/edit&id=<?= $kategori['id'] ?>' class='btn btn-warning btn-sm'>Edit</a>
+										<a href='?page=categories/delete&id=<?= $kategori['id'] ?>' class='btn btn-default btn-sm'>Hapus</a>
 								  </td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td>Kemanusiaan</td>
-									<td>
-										<a href='' class='btn btn-warning btn-sm'>Edit</a>
-										<a href='' class='btn btn-default btn-sm'>Hapus</a>
-								  </td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Pendidikan</td>
-									<td>
-										<a href='' class='btn btn-warning btn-sm'>Edit</a>
-										<a href='' class='btn btn-default btn-sm'>Hapus</a>
-								  </td>
-								</tr>
+								<?php 
+								} ?>
 							</tbody>
 						</table>
 
