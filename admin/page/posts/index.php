@@ -29,7 +29,7 @@
 									<td><?= $post['title'] ?></td>
 									<td><?= $post['name'] ?></td>
 									<td><?= $post['fullname'] ?></td>
-									<td><?= date('d F Y', $post['date']) ?></td>
+									<td><?= date('d F Y', strtotime($post['date'])) ?></td>
 									<td>
 											<a href='?page=posts/edit&id=<?= $post['id'] ?>' class='btn btn-warning btn-sm'>Edit</a>
 											<a href='?page=posts/delete&id=<?= $post['id'] ?>' class='btn btn-default btn-sm'>Hapus</a>
